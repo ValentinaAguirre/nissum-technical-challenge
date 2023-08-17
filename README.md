@@ -2,7 +2,7 @@
 
 The RESTful API for user creation allows adding new users, following the principles of the REST architecture and using JSON format.
 
-The application uses Spring Boot as the base framework to create a RESTful API and handle the persistence layer. Lombok is used to automatically generate the repetitive code, such as getters and setters methods. H2 Database is the in-memory database used for development and testing. JSON Web Token (JWT). Springfox Swagger is integrated to generate interactive API documentation.
+The application uses Spring Boot as the base framework to create a RESTful API and handle the persistence layer. H2 Database is the in-memory database used for development and testing. JSON Web Token (JWT) a token is generated at user creation which must then be validated at authentication. Springfox Swagger is integrated to generate interactive API documentation.
 
 The application includes unit and integration testing using JUnit Jupiter and Mockito to ensure code quality.
 
@@ -25,15 +25,12 @@ The application includes unit and integration testing using JUnit Jupiter and Mo
 - Spring Boot 2.7.14
 - Spring Boot Starter Data JPA
 - Spring Boot Starter Web
-- Spring Boot Starter Security
 - Lombok 1.18.20
 - H2 Database 2.2.220
-- JSON Web Token (JWT) 0.11.5
-- Jackson Datatype JSR-310 2.13.0
+- JSON Web Token (JWT) - jjwt 0.11.5
 - Springfox Swagger 3.0.0
 - JUnit Jupiter 5.8.2
 - Mockito 4.0.0
-- AssertJ Core 3.22.0
 
 ## Configuration
 
@@ -50,7 +47,7 @@ The application includes unit and integration testing using JUnit Jupiter and Mo
 
 1. Run the following command to build the project and generate the JAR:
    ```bash
-   ./gradlew build
+   ./gradlew bootJar
 
 2. Once the construction is finished, navigate to the directory `build/libs`:
    ```bash
@@ -58,7 +55,7 @@ The application includes unit and integration testing using JUnit Jupiter and Mo
 
 3. Run the JAR application using the following command:
    ```bash
-   java -jar nombre-del-archivo.jar
+   java -jar nissumTechicalChallenge-0.0.1-SNAPSHOT.jar
 
 ## Running from IntelliJ IDEA
 
@@ -66,7 +63,7 @@ The application includes unit and integration testing using JUnit Jupiter and Mo
 2. Select "File" from the menu bar and then "Open".
 3. Navigate to the project directory and select the build.gradle file.
 4. Wait for IntelliJ to configure the project.
-5. Navigate to the main class (it can be Application.java or another class with the main method).
+5. Navigate to the main class UsersApplication.
 6. Right-click on the main class and select "Run" to run the application.
 
 ## Accessing Swagger
@@ -93,7 +90,7 @@ You can access the H2 database administration console while the application is r
 
 ## Postman
 
-Import the Postman collection provided in the doc path with the name `NissumTechnicalChallenge.postman_collection.json` to test the API endpoints.
+Import the Postman collection provided in the doc folder with the name `NissumTechnicalChallenge.postman_collection.json` to test the API endpoints.
 
 ## Application Structure
 
