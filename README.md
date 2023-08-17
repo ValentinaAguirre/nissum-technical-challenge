@@ -38,7 +38,13 @@ The application includes unit and integration testing using JUnit Jupiter and Mo
 ## Configuration
 
 1. Clone this repository on your local machine.
+   ```bash
+   git clone https://github.com/ValentinaAguirre/nissum-technical-challenge.git
+   ```
 2. Open a terminal and navigate to the project directory.
+   ```bash
+   cd nissum-technical-challenge
+   ```
 
 ## Running from the Console
 
