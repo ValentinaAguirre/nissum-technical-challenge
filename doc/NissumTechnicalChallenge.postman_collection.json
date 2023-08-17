@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "58e76818-3642-41f0-bf06-5a5bd41a4d56",
+		"name": "NissumTechnicalChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2276694"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jhon Doe\",\n    \"email\": \"john@smith.com\",\n    \"password\": \"Nissum123\",\n    \"phones\": [\n        {\n            \"number\": \"2559954\",\n            \"cityCode\": \"4\",\n            \"countryCode\": \"57\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
