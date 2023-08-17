@@ -101,4 +101,8 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public List<Users> getUsers() {
+        return userRepository.getAllUsers();
+    }
+
 }

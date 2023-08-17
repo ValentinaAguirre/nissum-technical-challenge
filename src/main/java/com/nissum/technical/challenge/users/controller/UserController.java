@@ -3,9 +3,11 @@ package com.nissum.technical.challenge.users.controller;
 import com.nissum.technical.challenge.users.exception.EmailAlreadyRegisteredException;
 import com.nissum.technical.challenge.users.model.dto.requests.UserRequests;
 import com.nissum.technical.challenge.users.model.dto.response.UserResponse;
+import com.nissum.technical.challenge.users.model.entity.Users;
 import com.nissum.technical.challenge.users.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -15,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "Users Controller", description = "This controller provides operations for managing users.")
 @RestController
@@ -44,4 +48,21 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
 
+
+    @Operation(summary = "Get all users", description = "Retrieve a list of all registered users.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "OK",
+                    content = {@Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = Users.class)))}),
+            @ApiResponse(responseCode = "204", description = "No Content"),
+            @ApiResponse(responseCode = "500", description = "Unexpected system error")})
+    @GetMapping
+    public ResponseEntity<List<Users>> getUsers() {
+        List<Users> userList = userService.getUsers();
+        if (userList.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.ok(userList);
+        }
+    }
 }
