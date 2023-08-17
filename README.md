@@ -1,4 +1,4 @@
-# Nissum technical challenge
+# Nissum Technical Challenge
 
 The RESTful API for user creation allows adding new users, following the principles of the REST architecture and using JSON format.
 
@@ -80,7 +80,7 @@ You can access the H2 database administration console while the application is r
 
 2. Complete the fields with the following information:
 
-- JDBC URL: `jdbc:h2:mem:usersdb`
+- JDBC URL: `jdbc:h2:mem:NissumTechChallengeDb`
 - User Name: `sa`
 - Password: (leave this field blank)
 - Press the "Connect" button to access the H2 console.
