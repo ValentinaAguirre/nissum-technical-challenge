@@ -295,6 +295,7 @@ Status 204 No Content
 ## Diagrams
 
 **_Solution Diagram_**
+![SolutionDiagram.png](doc%2FSolutionDiagram.png)
 
 **_Entity-relationship Diagram_**
 ![erDiagram.png](doc%2FerDiagram.png)
